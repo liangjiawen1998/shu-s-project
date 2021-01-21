@@ -202,14 +202,9 @@ def smile_plot(df): # 波动率微笑作图
     plotly.offline.plot(fig)
 
 def main():
-    date = '20210120'
-    # plot_df()
-    df = extra_data(date) # 提取数据
-    df = data_clear(df) # 数据清洗
-    df = cal_iv(df) # 计算隐含波动率
-    df = data_pivot(df) # 数据透视表
+    df = df.read_excel('iv.xlsx')
     smile_plot(df) # 波动率微笑
-    im_surface(df) # 波动率曲面
+    
     
 if __name__ == '__main__':
     main()
